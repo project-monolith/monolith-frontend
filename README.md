@@ -15,7 +15,8 @@ We recommend:
 * [Silver Seacher](https://github.com/rking/ag.vim)
 
 #### Pre-requisites
-1. `brew install node010`
+1. `brew install node`
+1a. Verify node is at v0.12.2 `nvm --version`
 2. `npm install yo -g`
 3. `npm install generator-backbone -g`
 4. `npm install grunt -g`
