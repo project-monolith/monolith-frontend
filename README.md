@@ -35,3 +35,10 @@ http://backbonetutorials.com/what-is-a-model/
 
 http://java.dzone.com/articles/backbone-tutorial-part-5
 
+#### Backend hooks
+
+All examples are for stop # 578
+
+* [Get coming trips](http://localhost:4567/stops/1_578/trips)
+* [Get content for the ticker](http://localhost:4567/stops/1_578/ticker)
+* [Get stop's coordinates + list of nearby stops](http://localhost:4567/stops/1_578/proximity)
