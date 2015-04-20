@@ -27,7 +27,7 @@ We recommend:
 #### Building and Running Development App
 1. `npm install`
 2. `bower install`
-3. `grunt server`
+3. `grunt serve`
 
 #### How to JavaScript
 
