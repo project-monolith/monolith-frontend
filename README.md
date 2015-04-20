@@ -21,6 +21,7 @@ We recommend:
 3. `npm install generator-backbone -g`
 4. `npm install grunt -g`
 5. `npm install grunt-cli -g`
+6. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
 
 #### Building and Running Development App
 1. `npm install`
