@@ -15,13 +15,14 @@ We recommend:
 * [Silver Seacher](https://github.com/rking/ag.vim)
 
 #### Pre-requisites
-1. `brew install node`
+1. `brew install node` or `port install nodejs ; port install npm`
 1a. Verify node is at v0.12.2 `nvm --version`
 2. `npm install yo -g`
 3. `npm install generator-backbone -g`
 4. `npm install grunt -g`
 5. `npm install grunt-cli -g`
-6. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
+6. `nmp install bower -g`
+7. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
 
 #### Building and Running Development App
 1. `npm install`
