@@ -9,9 +9,10 @@ body {
   margin: 0;
 }
 
+// TODO: Remove the negative margin
 .bus-station--title {
   background-color: #fbba2f;
-  height: 70px;
+  height: 72px;
   margin: 0;
   padding: 0;
   margin-top: -20px;
@@ -22,8 +23,36 @@ body {
   font-size: 45pt;
 }
 
+.bus-route--legend {
+  background-color:#0B79BF;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.bus-route--legend h5{
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.bus-route--label {
+  background-color:#737273;
+  height: 65px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: white;
+}
+
+.m-split {
+  display: inline-block;
+  width: 598px;
+}
+
 .bus-route--tileitem {
-  width: 400px;
+  width: 600px;
   height: 400px;
   padding: 0;
   margin: 0;
@@ -49,6 +78,10 @@ body {
 
 .m-align-left {
   float:left;
+}
+
+.m-align-right {
+  float:right;
 }
 
 .bus-route--waittimes {
