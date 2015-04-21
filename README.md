@@ -15,18 +15,19 @@ We recommend:
 * [Silver Seacher](https://github.com/rking/ag.vim)
 
 #### Pre-requisites
-1. `brew install node`
+1. `brew install node` or `port install nodejs ; port install npm`
 1a. Verify node is at v0.12.2 `nvm --version`
 2. `npm install yo -g`
 3. `npm install generator-backbone -g`
 4. `npm install grunt -g`
 5. `npm install grunt-cli -g`
-6. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
+6. `nmp install bower -g`
+7. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
 
 #### Building and Running Development App
 1. `npm install`
 2. `bower install`
-3. `grunt server`
+3. `grunt serve`
 
 #### How to JavaScript
 
@@ -34,3 +35,10 @@ http://backbonetutorials.com/what-is-a-model/
 
 http://java.dzone.com/articles/backbone-tutorial-part-5
 
+#### Backend hooks
+
+All examples are for stop # 578
+
+* [Get coming trips](http://localhost:4567/stops/1_578/trips)
+* [Get content for the ticker](http://localhost:4567/stops/1_578/ticker)
+* [Get stop's coordinates + list of nearby stops](http://localhost:4567/stops/1_578/proximity)
