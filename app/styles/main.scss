@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
   margin-top: -20px;
-  text-align: center;
+  padding: 0 2em;
 }
 
 .bus-station--title h3{
@@ -27,14 +27,15 @@ body {
   background-color:#0B79BF;
   height: 42px;
   margin: 0;
-  padding: 0;
   width: 100%;
+  padding: 0.5em 2em;
 }
 
 .bus-route--legend h5{
   padding: 0;
   margin: 0;
   color: white;
+  font-size: 20pt;
 }
 
 .bus-route--label {
@@ -46,14 +47,19 @@ body {
   color: white;
 }
 
+.bus-route--label h4{
+  font-size: 30pt;
+}
+
 .m-split {
   display: inline-block;
   width: 598px;
+  padding: 0 2em 0 2em;
 }
 
 .bus-route--tileitem {
   width: 600px;
-  height: 400px;
+  height: 246px;
   padding: 0;
   margin: 0;
   border: 1px solid black;
