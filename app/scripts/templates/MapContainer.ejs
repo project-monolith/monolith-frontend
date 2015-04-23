@@ -3,7 +3,19 @@
 <script type="text/javascript">
 
 // TODO: replace these hard-coded coordinates with values from the backend  
-  var map = L.map('map').setView([47.610844, -122.338554],18);
+  var map = L.map(
+      'map',
+      {
+          center: new L.LatLng(47.610844, -122.338554),
+          zoom: 18,
+          dragging: false,
+          touchZoom: false,
+          scrollWheelZoom: false,
+          doubleClickZoom: false,
+          boxZoom: false,
+          tap: false
+      }
+  );   // map options: http://leafletjs.com/reference.html#map-options
   
   L.tileLayer( 
       '//stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.jpg', 
