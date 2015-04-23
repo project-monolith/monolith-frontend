@@ -17,6 +17,10 @@ Monolith.Routers = Monolith.Routers || {};
         this.station = new Monolith.Views.RouteContainer(
           $('body'),
           new Monolith.Models.BusStation()
+        );
+        this.map = new Monolith.Views.MapContainer(
+          $('body'),
+          this.station.model
         )
       }
 
