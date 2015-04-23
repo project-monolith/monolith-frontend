@@ -1,2 +1,20 @@
-<div class="map--container"></div>
+<div class="map--container" id="map"></div>
 
+<script type="text/javascript">
+
+// TODO: replace these hard-coded coordinates with values from the backend  
+  var map = L.map('map').setView([47.610844, -122.338554],18);
+  
+  L.tileLayer( 
+      '//stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.jpg', 
+      {
+          attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://stamen.com/" title="Stamen" target="_blank">Stamen Design</a>',
+        subdomains: ['a','b','c']
+      }
+  ).addTo( map );  
+</script>
+
+<!--
+  Alternate map styles: http://maps.stamen.com/
+  NB: once we've settled on one, we need to use the correct attribution line for it
+-->
