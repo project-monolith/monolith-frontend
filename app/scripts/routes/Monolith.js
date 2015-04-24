@@ -20,7 +20,7 @@ Monolith.Routers = Monolith.Routers || {};
         );
         this.map = new Monolith.Views.MapContainer(
           $('body'),
-          this.station.model
+          new Monolith.Models.MapData()
         )
       }
 

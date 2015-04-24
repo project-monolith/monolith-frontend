@@ -24,7 +24,20 @@
         subdomains: ['a','b','c']
       }
   ).addTo( map );  
+  
+  
 </script>
+
+<% for(var i=0; i< nearby_stops.length; i++) { %>
+<%   var s = nearby_stops.models[i].attributes; %>
+<%   console.log(s); %>
+<% } %>
+
+<!--
+L.marker([LAT, LON]).addTo(map)
+    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
+    .openPopup();
+-->
 
 <!--
   Alternate map styles: http://maps.stamen.com/
