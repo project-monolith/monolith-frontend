@@ -21,6 +21,7 @@ Monolith.Views = Monolith.Views || {};
           this.body = body;
           this.model = model;
           this.model.fetch();
+// TODO: replace this with a refresh method that doesn't redraw the map        
           this.listenTo(this.model, 'change', this.render);
         },
 

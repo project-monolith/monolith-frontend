@@ -106,10 +106,18 @@ div.map--container {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
 }
 
 div.leaflet-top {
   display: none;
+}
+
+span.popup.heading {
+  font-weight: bold;
+}
+
+span.popup.bodytext {
+  font-style: italic;
 }

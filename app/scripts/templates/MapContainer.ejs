@@ -6,16 +6,26 @@
   var map = L.map(
       'map',
       {
-          center: new L.LatLng(47.610844, -122.338554),
+          center: new L.LatLng(
+            <%= location_data.lat %>,
+            <%= location_data.lon %>
+          ),
           zoom: 18,
           dragging: false,
           touchZoom: false,
           scrollWheelZoom: false,
           doubleClickZoom: false,
           boxZoom: false,
-          tap: false
+          tap: false,
+          closePopupOnClick: false
       }
   );   // map options: http://leafletjs.com/reference.html#map-options
+ 
+  // hack to allow all the popups to stay open together
+  // http://stackoverflow.com/questions/9047931/leaflet-js-open-all-popup-bubbles-on-page-load
+    map.on('popupopen', function(e) {
+      delete map._popup;
+    });
   
   L.tileLayer( 
       '//stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.jpg', 
@@ -23,21 +33,33 @@
           attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://stamen.com/" title="Stamen" target="_blank">Stamen Design</a>',
         subdomains: ['a','b','c']
       }
-  ).addTo( map );  
+  ).addTo( map ); 
   
+  
+<%  for (var i=0; i < nearby_stops.length; i++) { %>
+<%    var s = nearby_stops.models[i].attributes; %>
+<%    var popuptext = '<span class="popup heading">'; %>
+<%    popuptext += s.name; %>
+<%    popuptext += '</span><br /><span class="popup bodytext">Routes: '; %>
+<%    for (var j=0; j < s.routes.length; j++) { %>
+<%      if (j > 0) { popuptext += ', '; } %>
+<%      popuptext += s.routes[j] %>
+<%    } %>
+<%    popuptext += '</span>'; %>
+      L.marker([<%= s.lat %>, <%= s.lon %> ]).addTo(map)
+                .bindPopup(
+                  '<%= popuptext %>',
+                  {
+                    closeButton: false,
+                    autoPan: false
+                  }
+                )
+                .openPopup(); 
+<%  } %>
   
 </script>
 
-<% for(var i=0; i< nearby_stops.length; i++) { %>
-<%   var s = nearby_stops.models[i].attributes; %>
-<%   console.log(s); %>
-<% } %>
 
-<!--
-L.marker([LAT, LON]).addTo(map)
-    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-    .openPopup();
--->
 
 <!--
   Alternate map styles: http://maps.stamen.com/
