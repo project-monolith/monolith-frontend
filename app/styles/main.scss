@@ -41,14 +41,14 @@ h1,h2,h3,h4,h5 {
   margin: 0;
   padding: 0;
   width: 100%;
-  padding: 0.6em 2em;
+  padding: 1em 2em;
 }
 
 .bus-route--legend h5{
   padding: 0;
   margin: 0;
   color: white;
-  font-size: 20pt;
+  font-size: 14pt;
 }
 
 .bus-route--label {
@@ -56,19 +56,19 @@ h1,h2,h3,h4,h5 {
   height: 65px;
   margin: 0;
   padding: 0;
-  padding-top: 14px;
+  padding-top: 1.3em;
   width: 100%;
   color: white;
 }
 
 .bus-route--label h4{
-  font-size: 30pt;
+  font-size: 24pt;
 }
 
 .m-split {
   display: inline-block;
   width: 598px;
-  padding: 0 2em 0 2em;
+  padding: 0 3.2em 0 2.2em;
 }
 
 .bus-route--tileitem {
