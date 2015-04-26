@@ -13,18 +13,24 @@ Monolith.Views = Monolith.Views || {};
 
         id: '',
 
-        className: '',
+        className: 'map--container',
 
         events: {},
 
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
+        initialize: function (body, model) {
+          this.body = body;
+          this.model = model;
+          this.model.fetch();
+// TODO: replace this with a refresh method that doesn't redraw the map        
+          this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+          this.$el.html(this.template(this.model.toJSON()));
+          this.body.append(this.$el);
+          return this;
         }
-
+      
     });
 
 })();

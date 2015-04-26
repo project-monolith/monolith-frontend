@@ -2,6 +2,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 
+@import '../bower_components/leaflet/dist/leaflet.css';
+
 body {
   padding: 0;
   margin: 0;
@@ -97,3 +99,25 @@ margin: 0 50px 0 0;
 ul.newsticker span {
 margin: 0 10px 0 0;
 } 
+
+div.map--container {
+  clear: both;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+div.leaflet-top {
+  display: none;
+}
+
+span.popup.heading {
+  font-weight: bold;
+}
+
+span.popup.bodytext {
+  font-style: italic;
+}
