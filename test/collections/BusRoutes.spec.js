@@ -4,7 +4,7 @@
 describe('BusRoutes Collection', function () {
 
     beforeEach(function () {
-        this.BusRoutesCollection = new Kiosk.Collections.BusRoutes();
+        this.BusRoutesCollection = new Monolith.Collections.BusRoutes();
     });
 
 });

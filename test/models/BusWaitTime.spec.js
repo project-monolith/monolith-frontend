@@ -4,7 +4,7 @@
 describe('BusWaitTime Model', function () {
 
     beforeEach(function () {
-        this.BusWaitTimeModel = new Kiosk.Models.BusWaitTime();
+        this.BusWaitTimeModel = new Monolith.Models.BusWaitTime();
     });
 
 });

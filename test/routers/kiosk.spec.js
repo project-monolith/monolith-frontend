@@ -4,7 +4,7 @@
 describe('Kiosk Router', function () {
 
     beforeEach(function () {
-        this.KioskRouter = new Kiosk.Routers.Kiosk();
+        this.KioskRouter = new Monolith.Routers.Monolith();
     });
 
     it('index route', function(){

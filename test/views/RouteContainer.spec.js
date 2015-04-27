@@ -4,7 +4,7 @@
 describe('RouteContainer View', function () {
 
     beforeEach(function () {
-        this.RouteContainerView = new Kiosk.Views.RouteContainer();
+        this.RouteContainerView = new Monolith.Views.RouteContainer();
     });
 
 });

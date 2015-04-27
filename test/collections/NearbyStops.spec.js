@@ -4,7 +4,7 @@
 describe('NearbyStops Collection', function () {
 
     beforeEach(function () {
-        this.NearbyStopsCollection = new Kiosk.Collections.NearbyStops();
+        this.NearbyStopsCollection = new Monolith.Collections.NearbyStops();
     });
 
 });

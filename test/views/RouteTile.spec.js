@@ -4,7 +4,7 @@
 describe('RouteTile View', function () {
 
     beforeEach(function () {
-        this.RouteTileView = new Kiosk.Views.RouteTile();
+        this.RouteTileView = new Monolith.Views.RouteTile();
     });
 
 });

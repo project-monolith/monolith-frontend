@@ -1,10 +1,10 @@
 /*global beforeEach, describe, it, assert, expect  */
 'use strict';
 
-describe('MapData Model', function () {
+describe('BusStation View', function () {
 
     beforeEach(function () {
-        this.MapDataModel = new Monolith.Models.MapData();
+        this.BusStationView = new Monolith.Views.BusStation();
     });
 
 });
