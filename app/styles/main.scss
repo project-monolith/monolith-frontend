@@ -4,55 +4,124 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 @import '../bower_components/leaflet/dist/leaflet.css';
 
+@font-face {
+  font-family: "Futiger";
+  src: url("fonts/FrutigerLTStd-Bold.otf") format("opentype"),
+       url("fonts/FrutigerLTStd-Light.otf") format("opentype"),
+       url("fonts/FrutigerLTStd-Cn.otf") format("opentype");
+}
+
 body {
+  padding: 0;
+  margin: 0;
+  font-family: "Futiger";
+}
+
+h1,h2,h3,h4,h5 {
   padding: 0;
   margin: 0;
 }
 
+// TODO: Remove the negative margin
 .bus-station--title {
   background-color: #fbba2f;
-  height: 70px;
+  height: 72px;
   margin: 0;
   padding: 0;
-  margin-top: -20px;
-  text-align: center;
+  padding: .4em 2em;
 }
 
 .bus-station--title h3{
   font-size: 45pt;
 }
 
-.bus-route--tileitem {
-  width: 400px;
-  height: 400px;
+.bus-route--legend {
+  background-color:#0B79BF;
+  height: 42px;
+  margin: 0;
   padding: 0;
+  width: 100%;
+  padding: 1em 2em;
+}
+
+.bus-route--legend h5{
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 14pt;
+}
+
+.bus-route--label {
+  background-color:#737273;
+  height: 65px;
+  margin: 0;
+  padding: 0;
+  padding-top: 1.3em;
+  width: 100%;
+  color: white;
+}
+
+.bus-route--label h4{
+  font-size: 24pt;
+}
+
+.m-split {
+  display: inline-block;
+  width: 598px;
+  padding: 0 3.2em 0 2.2em;
+}
+
+.bus-route--tileitem {
+  width: 600px;
+  height: 246px;
   margin: 0;
   border: 1px solid black;
   text-transform: capitalize;
+  padding: 1.4em 0 0 2em;
 }
 
-.bus-route--tileitem-section {
-  height: 80%;
+.bus-route--tileitem-route {
+  height: 50%;
+  margin: 0;
 }
 
-.bus-route--tileitem-section h1{
-  font-size: 74pt;
+.bus-route--tileitem-route h1{
+  font-size: 100pt;
+}
+
+.bus-route--tileitem-name {
+  margin-top: 18px;
+  height: 76px;
+  overflow: hidden;
+}
+
+.bus-route--tileitem-name h3{
+  font-size: 28pt;
 }
 
 .m-large {
-  width: 279px;
+  width: 318px;
 }
 
 .m-small {
-  width: 119px;
+  width: 252px;
 }
 
 .m-align-left {
   float:left;
 }
 
+.m-align-right {
+  float:right;
+}
+
 .bus-route--waittimes {
   list-style-type: none;
+  text-align: center;
+}
+
+.bus-route--waittimes h2{
+  font-size: 42pt;
 }
 
 /* Style info for Newsticker */
