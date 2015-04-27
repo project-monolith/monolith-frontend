@@ -9,7 +9,7 @@ Monolith.Views = Monolith.Views || {};
 
         template: JST['app/scripts/templates/RouteTile.ejs'],
 
-        tagName: 'bus-route--tileitem',
+        className: 'bus-route--tileitem-container',
 
         events: {},
 
