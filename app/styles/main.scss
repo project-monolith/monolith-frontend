@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5 {
   margin: 0;
 }
 
-// TODO: Remove the negative margin
+// TODO: Refactor into separate files
 .bus-station--title {
   background-color: #fbba2f;
   height: 72px;
@@ -71,6 +71,16 @@ h1,h2,h3,h4,h5 {
   padding: 0 3.2em 0 2.2em;
 }
 
+.bus-route--container {
+  overflow: auto;
+}
+
+.bus-route--tileitem-container {
+  width: 599px;
+  height: 245px;
+  float: left;
+}
+
 .bus-route--tileitem {
   width: 600px;
   height: 246px;
@@ -100,11 +110,11 @@ h1,h2,h3,h4,h5 {
 }
 
 .m-large {
-  width: 318px;
+  width: 336px;
 }
 
 .m-small {
-  width: 252px;
+  width: 233px;
 }
 
 .m-align-left {
@@ -127,47 +137,53 @@ h1,h2,h3,h4,h5 {
 /* Style info for Newsticker */
 /* liScroll styles */
 
-.tickercontainer { /* the outer div with the black border */
+.bus-route--ticker { /* the outer div with the black border */
 clear: both;
-border-top: 1px solid #000;
-background: #fff; 
+background: #fff;
 width: 1200px;
-height: 50px; 
-margin: 0; 
+height: 50px;
+margin: 0;
 padding: 0;
-overflow: hidden; 
+overflow: hidden;
 }
-.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+
+.bus-route--ticker .mask { /* that serves as a mask. so you get a sort of padding both left and right */
 position: relative;
 left: 10px;
-top: 8px;
+top: 10px;
 width: 1200px;
 overflow: hidden;
 }
-ul.newsticker { /* that's your list */
+
+.newsticker { /* that's your list */
 position: relative;
-font: bold 24pt Verdana;
 list-style-type: none;
 margin: 0;
 padding: 0;
 
 }
-ul.newsticker li {
+
+.newsticker li {
 float: left; /* important: display inline gives incorrect results when you check for elem's width */
 margin: 0;
 padding: 0;
+padding-top: .2em;
 background: #fff;
+font-size: 24pt;
+border: none;
 }
-ul.newsticker a {
+
+.newsticker a {
 white-space: nowrap;
 padding: 0;
 color: #ff0000;
-font: bold 10px Verdana;
+font: bold 10px;
 margin: 0 50px 0 0;
-} 
+}
+
 ul.newsticker span {
 margin: 0 10px 0 0;
-} 
+}
 
 div.map--container {
   clear: both;
