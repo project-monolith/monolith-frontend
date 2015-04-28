@@ -14,17 +14,19 @@ Monolith.Views = Monolith.Views || {};
         events: {},
 
         initialize: function (model) {
-            //this.listenTo(this.model, 'change', this.render);
           this.model = model;
+          this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            if (this.model) {
-              this.$el.html(this.template(this.model.toJSON()));
-            }
-            else {
-              this.$el.html(this.template());
-            }
+          $(this.$el).empty()
+
+          if (this.model) {
+            this.$el.html(this.template(this.model.toJSON()));
+          }
+          else {
+            this.$el.html(this.template());
+          }
           return this;
         }
 

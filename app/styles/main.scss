@@ -67,11 +67,12 @@ h1,h2,h3,h4,h5 {
 
 .m-split {
   display: inline-block;
-  width: 598px;
-  padding: 0 3.2em 0 2.2em;
+  width: 597px;
+  padding: 0 2.4em 0 2.2em;
 }
 
 .bus-route--container {
+  height: 736px;
   overflow: auto;
 }
 
@@ -88,6 +89,10 @@ h1,h2,h3,h4,h5 {
   border: 1px solid black;
   text-transform: capitalize;
   padding: 1.4em 0 0 2em;
+}
+
+.b-red {
+  color: #EC1D40;
 }
 
 .bus-route--tileitem-route {
@@ -140,6 +145,7 @@ h1,h2,h3,h4,h5 {
 .bus-route--ticker { /* the outer div with the black border */
 clear: both;
 background: #fff;
+width: 2400px;
 height: 50px;
 margin: 0;
 padding: 0;
@@ -159,7 +165,6 @@ position: relative;
 list-style-type: none;
 margin: 0;
 padding: 0;
-
 }
 
 .newsticker li {

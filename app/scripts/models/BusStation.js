@@ -16,6 +16,11 @@ Monolith.Models = Monolith.Models || {};
 
       initialize: function() {
         this.set("bus_routes",  new Monolith.Collections.BusRoutes());
+
+        // Set up poll of data
+        setInterval((function() {
+          this.fetch();
+        }).bind(this), 5 * 1000);
       },
 
       validate: function(attrs, options) {

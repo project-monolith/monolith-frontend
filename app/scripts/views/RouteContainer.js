@@ -22,22 +22,33 @@ Monolith.Views = Monolith.Views || {};
           this.model = model;
           this.model.fetch();
           this.listenTo(this.model.get("bus_routes"),'add remove', this.render);
+          this.listenTo(this.model.get("bus_routes"),'change', this.update);
+        },
+
+        update: function () {
+          if(this.$(".bus-route--container").length > 0) {
+            this.$(".bus-route--container").empty();
+            // TODO: clean up this spaghetti
+            this.renderTiles();
+          }
         },
 
         render: function () {
           if(this.model) {
-            // Create all the routes
-            this.$el.html(this.template(this.model.toJSON()));
-            this.model.get("bus_routes").each((function(_this) {
-              return function (busRoute) {
-                _this.$('.bus-route--container').append(
-                  new Monolith.Views.RouteTile(busRoute).render().$el
-                );
-              };
-            })(this)
-            );
+            this.renderTiles();
           }
           return this;
+        },
+
+        renderTiles: function () {
+          this.$el.html(this.template(this.model.toJSON()));
+          this.model.get("bus_routes").each(
+              (function (busRoute) {
+                this.$('.bus-route--container').append(
+                  new Monolith.Views.RouteTile(busRoute).render().$el
+                  );
+                }).bind(this)
+            );
         }
 
     });
