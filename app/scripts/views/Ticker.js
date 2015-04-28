@@ -1,30 +1,30 @@
 /*global Monolith, Backbone, JST*/
-
 Monolith.Views = Monolith.Views || {};
-
 (function () {
-    'use strict';
+  'use strict';
 
-    Monolith.Views.MonolithTicker = Backbone.View.extend({
+  Monolith.Views.Ticker = Backbone.View.extend({
+    template: JST['app/scripts/templates/Ticker.ejs'],
+    tagName: 'div',
+    id: '',
+    className: 'bus-route--ticker-container',
+    events: {},
 
-        template: JST['app/scripts/templates/MonolithTicker.ejs'],
+    initialize: function (model) {
+      this.model = model;
+      this.listenTo(this.model, 'change', this.render);
+    },
 
-        tagName: 'div',
+    start: function() {
+      // Configure the ticker
+	    this.$("ul#ticker").liScroll({travelocity: 0.15});
+    },
 
-        id: '',
+    render: function () {
+      this.$el.html(this.template(this.model.toJSON()));
 
-        className: '',
-
-        events: {},
-
-        initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
-        },
-
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-        }
-
-    });
+      return this;
+    }
+ });
 
 })();

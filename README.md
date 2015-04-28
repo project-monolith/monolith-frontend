@@ -21,7 +21,7 @@ We recommend:
 3. `npm install generator-backbone -g`
 4. `npm install grunt -g`
 5. `npm install grunt-cli -g`
-6. `nmp install bower -g`
+6. `npm install bower -g`
 7. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
 
 #### Building and Running Development App

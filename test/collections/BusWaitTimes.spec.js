@@ -4,7 +4,7 @@
 describe('BusWaitTimes Collection', function () {
 
     beforeEach(function () {
-        this.BusWaitTimesCollection = new Kiosk.Collections.BusWaitTimes();
+        this.BusWaitTimesCollection = new Monolith.Collections.BusWaitTimes();
     });
 
 });

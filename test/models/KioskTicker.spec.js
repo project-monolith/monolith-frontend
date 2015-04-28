@@ -4,7 +4,7 @@
 describe('KioskTicker Model', function () {
 
     beforeEach(function () {
-        this.KioskTickerModel = new Kiosk.Models.KioskTicker();
+        this.KioskTickerModel = new Monolith.Models.Ticker();
     });
 
 });

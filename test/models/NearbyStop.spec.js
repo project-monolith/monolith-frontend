@@ -4,7 +4,7 @@
 describe('NearbyStop Model', function () {
 
     beforeEach(function () {
-        this.NearbyStopModel = new Kiosk.Models.NearbyStop();
+        this.NearbyStopModel = new Monolith.Models.NearbyStop();
     });
 
 });

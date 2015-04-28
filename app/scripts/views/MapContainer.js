@@ -17,20 +17,18 @@ Monolith.Views = Monolith.Views || {};
 
         events: {},
 
-        initialize: function (body, model) {
-          this.body = body;
+        initialize: function (model) {
           this.model = model;
           this.model.fetch();
-// TODO: replace this with a refresh method that doesn't redraw the map        
+// TODO: replace this with a refresh method that doesn't redraw the map
           this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
           this.$el.html(this.template(this.model.toJSON()));
-          this.body.append(this.$el);
           return this;
         }
-      
+
     });
 
 })();

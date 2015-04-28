@@ -4,7 +4,7 @@
 describe('BusStation Model', function () {
 
     beforeEach(function () {
-        this.BusStationModel = new Kiosk.Models.BusStation();
+        this.BusStationModel = new Monolith.Models.BusStation();
     });
 
 });

@@ -4,7 +4,7 @@
 describe('BusListItem View', function () {
 
     beforeEach(function () {
-        this.BusListItemView = new Kiosk.Views.BusListItem();
+        this.BusListItemView = new Monolith.Views.BusListItem();
     });
 
 });

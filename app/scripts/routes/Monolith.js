@@ -11,17 +11,10 @@ Monolith.Routers = Monolith.Routers || {};
       },
 
       startMonolith: function() {
-        var tile = new Monolith.Views.RouteTile(
-          new Monolith.Models.BusRoute()
+        this.station = new Monolith.Views.BusStation(
+          $('body')
         );
-        this.station = new Monolith.Views.RouteContainer(
-          $('body'),
-          new Monolith.Models.BusStation()
-        );
-        this.map = new Monolith.Views.MapContainer(
-          $('body'),
-          new Monolith.Models.MapData()
-        )
+        this.station.render();
       }
 
     });

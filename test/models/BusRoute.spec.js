@@ -4,7 +4,7 @@
 describe('BusRoute Model', function () {
 
     beforeEach(function () {
-        this.BusRouteModel = new Kiosk.Models.BusRoute();
+        this.BusRouteModel = new Monolith.Models.BusRoute();
     });
 
 });

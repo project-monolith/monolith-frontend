@@ -4,7 +4,7 @@
 describe('MapContainer View', function () {
 
     beforeEach(function () {
-        this.MapContainerView = new Kiosk.Views.MapContainer();
+        this.MapContainerView = new Monolith.Views.MapContainer();
     });
 
 });

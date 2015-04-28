@@ -4,7 +4,7 @@
 describe('KioskTicker View', function () {
 
     beforeEach(function () {
-        this.KioskTickerView = new Kiosk.Views.KioskTicker();
+        this.KioskTickerView = new Monolith.Views.Ticker();
     });
 
 });
