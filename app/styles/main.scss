@@ -72,6 +72,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .bus-route--container {
+  height: 736px;
   overflow: auto;
 }
 
@@ -88,6 +89,10 @@ h1,h2,h3,h4,h5 {
   border: 1px solid black;
   text-transform: capitalize;
   padding: 1.4em 0 0 2em;
+}
+
+.b-red {
+  color: #EC1D40;
 }
 
 .bus-route--tileitem-route {
