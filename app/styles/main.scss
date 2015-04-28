@@ -4,7 +4,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 // switching to CDN version of the Leaflet files to fix deployment issue
 //@import '../bower_components/leaflet/dist/leaflet.css';
-@import '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css'
+@import '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
 
 @font-face {
   font-family: "Futiger";
