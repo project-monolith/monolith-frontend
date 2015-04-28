@@ -2,9 +2,13 @@
 
 <script type="text/javascript">
   
-L.Icon.Default.imagePath = '../bower_components/leaflet/dist/images/';
+  var stopIcon = L.icon({
+    iconUrl: '../../images/marker_black_on_yellow.png',
+    iconSize: [24, 33],
+    iconAnchor: [12, 33],
+    popupAnchor: [0, -33]
+  });
   
-// TODO: replace these hard-coded coordinates with values from the backend  
   var map = L.map(
       'map',
       {
@@ -48,17 +52,28 @@ L.Icon.Default.imagePath = '../bower_components/leaflet/dist/images/';
 <%      popuptext += s.routes[j] %>
 <%    } %>
 <%    popuptext += '</span>'; %>
-      L.marker([<%= s.lat %>, <%= s.lon %> ]).addTo(map)
-                .bindPopup(
-                  '<%= popuptext %>',
-                  {
-                    closeButton: false,
-                    autoPan: false
-                  }
-                )
-                .openPopup(); 
+      L.marker(
+          [<%= s.lat %>, <%= s.lon %> ],
+          {
+              icon: stopIcon,
+              alt: 'x'
+          }
+      )
+        .addTo(map)
+        .bindPopup(
+          '<%= popuptext %>',
+          {
+            closeButton: false,
+            autoPan: false,
+            className: 'stopPopup'
+          }
+        )
+        .openPopup(); 
 <%  } %>
-  
+
+           
+           
+           
 </script>
 
 
