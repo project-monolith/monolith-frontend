@@ -9,6 +9,13 @@
     popupAnchor: [0, -33]
   });
   
+  var kioskIcon = L.icon({
+    iconUrl: '../../images/marker_white_on_black.png',
+    iconSize: [25, 25],
+    iconAnchor: [12, 25],
+    popupAnchor: [0, -25]
+  });
+  
   var map = L.map(
       'map',
       {
@@ -52,26 +59,46 @@
 <%      popuptext += s.routes[j] %>
 <%    } %>
 <%    popuptext += '</span>'; %>
-      L.marker(
-          [<%= s.lat %>, <%= s.lon %> ],
-          {
-              icon: stopIcon,
-              alt: 'x'
-          }
-      )
-        .addTo(map)
-        .bindPopup(
-          '<%= popuptext %>',
-          {
-            closeButton: false,
-            autoPan: false,
-            className: 'stopPopup'
-          }
-        )
-        .openPopup(); 
+  L.marker(
+      [<%= s.lat %>, <%= s.lon %>],
+      {
+          icon: stopIcon,
+          alt: 'x'
+      }
+  )
+  .addTo(map)
+  .bindPopup(
+    '<%= popuptext %>',
+    {
+      closeButton: false,
+      autoPan: false,
+      className: 'stopPopup'
+    }
+  )
+  .openPopup(); 
 <%  } %>
 
-           
+           <% console.log(location_data); %>
+           <% console.log(nearby_stops); %>
+<% var k = location_data; %>           
+L.marker(
+    [<%= k.lat %>, <%= k.lon %>],
+    {
+        icon: kioskIcon,
+        alt: '*'
+    }
+)
+.addTo(map)
+.bindPopup(
+  "You are here",
+   {
+    closeButton: false,
+    autoPan: false,
+    className: 'kioskPopup'
+  }
+   
+)
+.openPopup();
            
            
 </script>
