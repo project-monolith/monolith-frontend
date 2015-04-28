@@ -7,7 +7,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 @import '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
 
 @font-face {
-  font-family: "Futiger";
+  font-family: "Frutiger";
   src: url("fonts/FrutigerLTStd-Bold.otf") format("opentype"),
        url("fonts/FrutigerLTStd-Light.otf") format("opentype"),
        url("fonts/FrutigerLTStd-Cn.otf") format("opentype");
@@ -16,7 +16,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 body {
   padding: 0;
   margin: 0;
-  font-family: "Futiger";
+  font-family: "Frutiger";
 }
 
 h1,h2,h3,h4,h5 {
@@ -206,9 +206,13 @@ div.leaflet-top {
 }
 
 span.popup.heading {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 span.popup.bodytext {
-  font-style: italic;
+  font-weight: 100;
+}
+
+.leaflet-container {
+  font-family: "Frutiger";
 }
