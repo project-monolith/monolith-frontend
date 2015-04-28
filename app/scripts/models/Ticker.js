@@ -12,6 +12,10 @@ Monolith.Models = Monolith.Models || {};
 
     initialize: function() {
       this.fetch();
+      // Set up poll of data
+      setInterval((function() {
+        this.fetch();
+      }).bind(this), 5 * 1000);
     },
 
     parse: function(response, options)  {
