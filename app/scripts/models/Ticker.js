@@ -11,6 +11,7 @@ Monolith.Models = Monolith.Models || {};
     url: 'http://localhost:4567/stops/1_578/ticker',
 
     initialize: function() {
+      this.fetch();
     },
 
     parse: function(response, options)  {

@@ -17,11 +17,19 @@ Monolith.Views = Monolith.Views || {};
 
     start: function() {
       // Configure the ticker
-	    this.$("ul#ticker").liScroll({travelocity: 0.15});
+	    this.$("ul#ticker").liScroll({travelocity: 0.1});
     },
 
     render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
+      var model;
+
+      $(this.$el).empty();
+
+      model = this.model.toJSON()
+      if(model.text.length > 0) {
+        this.$el.html(this.template());
+        this.start();
+      }
 
       return this;
     }

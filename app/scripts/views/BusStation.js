@@ -29,7 +29,6 @@ Monolith.Views = Monolith.Views || {};
       this.$(".bus-station--section-ticker").append(this.ticker.render().el)
       this.$(".bus-station--section-map").append(this.map.render().el)
       this.$rootDOM.append(this.$el);
-      this.ticker.start();
     }
 
     });
