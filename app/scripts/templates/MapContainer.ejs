@@ -71,15 +71,13 @@
     '<%= popuptext %>',
     {
       closeButton: false,
-      autoPan: false,
+      autoPan: true,
       className: 'stopPopup'
     }
   )
   .openPopup(); 
 <%  } %>
 
-           <% console.log(location_data); %>
-           <% console.log(nearby_stops); %>
 <% var k = location_data; %>           
 L.marker(
     [<%= k.lat %>, <%= k.lon %>],
@@ -90,10 +88,10 @@ L.marker(
 )
 .addTo(map)
 .bindPopup(
-  "You are here",
+  "You are here: <br/ > <%= k.name %>",
    {
     closeButton: false,
-    autoPan: false,
+    autoPan: true,
     className: 'kioskPopup'
   }
    
