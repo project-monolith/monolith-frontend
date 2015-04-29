@@ -23,8 +23,8 @@ Monolith.Models = Monolith.Models || {};
       this.set(
         "location_data",
         {
-          "lat": 47.610246,
-          "lon": -122.338172,
+          "lat": 47.61029,
+          "lon": -122.338173,
           "id": "1_578",
           "name": "3rd Ave & Pike St"
         }
