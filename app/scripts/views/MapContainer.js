@@ -64,23 +64,24 @@ Monolith.Views = Monolith.Views || {};
                   ];
                   var mindiff = Math.min.apply(Math, posdiffs);
                   if (diffs[0] === mindiff) {
-                    $popups[i].style.top=(rect.top - mindiff) + "px;";
+                    $popups[i].style.top=(rect.top - mindiff) + "px";
                     console.log("Moving " + i + " up by " + mindiff);
                   }
                   else if (diffs[1] === mindiff) {
-                    $popups[i].style.left=(rect.left + mindiff) + "px;";
+                    $popups[i].style.left=(other.right) + "px";
                     console.log("Moving " + i + " right by " + mindiff);
                   }
                   else if (diffs[2] === mindiff) {
-                    $popups[i].style.top=(rect.top + mindiff) + "px;";
+                    $popups[i].style.top=(other.bottom) + "px";
                     console.log("Moving " + i + " down by " + mindiff);
                   }
                   else {
-                    $popups[i].style.left=(rect.left - mindiff) + "px;";
+                    $popups[i].style.left=(rect.left - mindiff) + "px";
                     console.log("Moving " + i + " left by " + mindiff);
                   }
                   rect = $popups[i].getBoundingClientRect();
                   console.log($popups[i]);
+                  console.log(rect);
                 }
               }
             }
