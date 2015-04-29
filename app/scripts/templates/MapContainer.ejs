@@ -47,56 +47,58 @@
         subdomains: ['a','b','c']
       }
   ).addTo( map ); 
+
   
-  
-<%  for (var i=0; i < nearby_stops.length; i++) { %>
-<%    var s = nearby_stops.models[i].attributes; %>
-<%    var popuptext = '<span class="popup heading">'; %>
-<%    popuptext += s.name; %>
-<%    popuptext += '</span><br /><span class="popup bodytext">Routes: '; %>
-<%    for (var j=0; j < s.routes.length; j++) { %>
-<%      if (j > 0) { popuptext += ', '; } %>
-<%      popuptext += s.routes[j] %>
-<%    } %>
-<%    popuptext += '</span>'; %>
+  <% var k = location_data; %>           
   L.marker(
-      [<%= s.lat %>, <%= s.lon %>],
+      [<%= k.lat %>, <%= k.lon %>],
       {
-          icon: stopIcon,
-          alt: 'x'
+          icon: kioskIcon,
+          alt: '*'
       }
   )
   .addTo(map)
   .bindPopup(
-    '<%= popuptext %>',
-    {
+    "You are here: <br/ > <%= k.name %>",
+     {
       closeButton: false,
       autoPan: true,
-      className: 'stopPopup'
+      className: 'kioskPopup'
     }
-  )
-  .openPopup(); 
-<%  } %>
 
-<% var k = location_data; %>           
-L.marker(
-    [<%= k.lat %>, <%= k.lon %>],
-    {
-        icon: kioskIcon,
-        alt: '*'
-    }
-)
-.addTo(map)
-.bindPopup(
-  "You are here: <br/ > <%= k.name %>",
-   {
-    closeButton: false,
-    autoPan: true,
-    className: 'kioskPopup'
-  }
-   
-)
-.openPopup();
+  )
+  .openPopup();
+
+
+  <%  for (var i=0; i < nearby_stops.length; i++) { %>
+  <%    var s = nearby_stops.models[i].attributes; %>
+  <%    var popuptext = '<span class="popup heading">'; %>
+  <%    popuptext += s.name; %>
+  <%    popuptext += '</span><br /><span class="popup bodytext">Routes: '; %>
+  <%    for (var j=0; j < s.routes.length; j++) { %>
+  <%      if (j > 0) { popuptext += ', '; } %>
+  <%      popuptext += s.routes[j] %>
+  <%    } %>
+  <%    popuptext += '</span>'; %>
+    L.marker(
+        [<%= s.lat %>, <%= s.lon %>],
+        {
+            icon: stopIcon,
+            alt: 'x'
+        }
+    )
+    .addTo(map)
+    .bindPopup(
+      '<%= popuptext %>',
+      {
+        closeButton: false,
+        autoPan: true,
+        className: 'stopPopup'
+      }
+    )
+    .openPopup(); 
+  <%  } %>
+
            
            
 </script>
