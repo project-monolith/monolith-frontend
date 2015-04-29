@@ -63,7 +63,7 @@ function calcOffsets(r1, r2) {
 
 
 function movePopups(p1, p2, diffs) {
-  if ((diffs.down < 40) && (diffs.down > 0)) {
+  if ((diffs.down < 60) && (diffs.down > 0)) {
     console.log("Moving down by " + diffs.down);
     p1.style.top = parseInt(p1.style.top) + diffs.down / 2 + "px";
     p2.style.top = parseInt(p2.style.top) - diffs.down / 2 + "px";
