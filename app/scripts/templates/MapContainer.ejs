@@ -39,12 +39,17 @@
     map.on('popupopen', function(e) {
       delete map._popup;
     });
+
+// alternate tile styles: 
+// //{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png  // subdomain 'a' only
+// //{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png  // subdomain 'a' only
+// //stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg  // subdomains 'a', 'b', 'c'
   
   L.tileLayer( 
-      '//stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg', 
+      '//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', 
       {
-          attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://stamen.com/" title="Stamen" target="_blank">Stamen Design</a>',
-        subdomains: ['a','b','c']
+          attribution: 'Data &copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors, under ODbL | Map tiles by CartoDB, under CC BY 3.0.',
+        subdomains: ['a']
       }
   ).addTo( map ); 
 
