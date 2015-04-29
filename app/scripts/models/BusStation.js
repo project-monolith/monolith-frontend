@@ -16,16 +16,21 @@ Monolith.Models = Monolith.Models || {};
 
       initialize: function() {
         this.set("bus_routes",  new Monolith.Collections.BusRoutes());
+
+        this.sortAlphNum();
+        // Set up poll of data
+        setInterval((function() {
+          this.fetch();
+        }).bind(this), 5 * 1000);
+      },
+
+      sortAlphNum: function(){
         this.get("bus_routes").comparator = function sort (a, b) {
           var modifiedA = a.get("number").replace(/ [a-zA-Z]/g, "");
           var modifiedB = b.get("number").replace(/ [a-zA-Z]/g, "");
           return alphanum(modifiedA, modifiedB);
         };
-
-        // Set up poll of data
-        setInterval((function() {
-          this.fetch();
-        }).bind(this), 5 * 1000);
+        this.get("bus_routes").sort();
       },
 
       validate: function(attrs, options) {

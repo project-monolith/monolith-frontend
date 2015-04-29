@@ -28,6 +28,7 @@ Monolith.Views = Monolith.Views || {};
         update: function () {
           if(this.$(".bus-route--container").length > 0) {
             this.$(".bus-route--container").empty();
+            this.model.sortAlphNum();
             // TODO: clean up this spaghetti
             this.renderTiles();
           }
