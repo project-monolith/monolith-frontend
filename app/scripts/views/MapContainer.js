@@ -29,11 +29,10 @@ Monolith.Views = Monolith.Views || {};
           var $popups = $('.leaflet-popup-pane .leaflet-popup');
           var rectangles = [];
           for (var i = 0; i < $popups.length; i++) {
-            console.log($popups[i]);
-            var rect = $popups[i].getBoundingClientRect();
+            var rect = $popups[i].children[0].getBoundingClientRect();
             if (i > 0) {
               for (var j = 0; j < i; j++) {
-                var other = $popups[j].getBoundingClientRect();
+                var other = $popups[j].children[0].getBoundingClientRect();
                 if (
                       (
                         (rect.left >= other.left) &&
@@ -48,28 +47,40 @@ Monolith.Views = Monolith.Views || {};
                       )
                   ) {
                   console.log("Collision: " + i + ", " + j);
-                  console.log(rect);
                   console.log(other);
+                  console.log(rect);
                   var diffs = [
-                      Math.abs(rect.bottom - other.top),
-                      Math.abs(rect.left - other.right),
-                      Math.abs(other.bottom - rect.top),
-                      Math.abs(other.right - rect.left)
+                      (rect.bottom - other.top),
+                      (rect.left - other.right),
+                      (other.bottom - rect.top),
+                      (other.right - rect.left)
                   ];
-                  var mindiff = Math.min.apply(Math, diffs);
+                  console.log(diffs);
+                  var posdiffs = [
+                      Math.abs(diffs[0]),
+                      Math.abs(diffs[1]),
+                      Math.abs(diffs[2]),
+                      Math.abs(diffs[3])
+                  ];
+                  var mindiff = Math.min.apply(Math, posdiffs);
                   if (diffs[0] === mindiff) {
-                    $popups[i].css("margin-top", 0 - mindiff);
+                    $popups[i].style.top=(rect.top - mindiff) + "px;";
+                    console.log("Moving " + i + " up by " + mindiff);
                   }
                   else if (diffs[1] === mindiff) {
-                    $popups[i].css("margin-right", mindiff);
+                    $popups[i].style.left=(rect.left + mindiff) + "px;";
+                    console.log("Moving " + i + " right by " + mindiff);
                   }
                   else if (diffs[2] === mindiff) {
-                    $popups[i].css("margin-top", mindiff);
+                    $popups[i].style.top=(rect.top + mindiff) + "px;";
+                    console.log("Moving " + i + " down by " + mindiff);
                   }
                   else {
-                    $popups[i].css("margin-top", 0 - mindiff);
+                    $popups[i].style.left=(rect.left - mindiff) + "px;";
+                    console.log("Moving " + i + " left by " + mindiff);
                   }
-                  
+                  rect = $popups[i].getBoundingClientRect();
+                  console.log($popups[i]);
                 }
               }
             }
