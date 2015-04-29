@@ -8,7 +8,7 @@
         <% if (wait_times[i].wait == "DUE") {%>
           <li class="bus-route--waittimes-item b-red"><h2><%= wait_times[i].wait %></h2></li>
         <% }else if ( wait_times[i].wait > 0) {%>
-          <li class="bus-route--waittimes-item"><h2><%= wait_times[i].wait %></h2></li>
+          <li class="bus-route--waittimes-item b-grey"><h2><%= wait_times[i].wait %></h2></li>
         <% } %>
       <% } %>
     </ul>
