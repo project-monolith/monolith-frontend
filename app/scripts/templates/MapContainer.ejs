@@ -79,7 +79,7 @@
   <%  for (var i=0; i < nearby_stops.length; i++) { %>
   <%    var s = nearby_stops.models[i].attributes; %>
   <%    if ((s.name.indexOf("drop off only") < 0) && (s.lat != k.lat) && (s.lon != k.lon)) { %>
-  <%    console.log(s); %>
+  <%    // console.log(s); %>
   <%    var popuptext = '<span class="popup heading">'; %>
   <%    popuptext += s.name; %>
   <%    popuptext += '</span><br /><span class="popup bodytext">Routes: '; %>
