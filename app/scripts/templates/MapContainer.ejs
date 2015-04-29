@@ -76,7 +76,7 @@
   .openPopup();
 
 
-  <%  for (var i=0; i < Math.min(5, nearby_stops.length); i++) { %>
+  <%  for (var i=0; i < nearby_stops.length; i++) { %>
   <%    var s = nearby_stops.models[i].attributes; %>
   <%    if ((s.name.indexOf("drop off only") < 0) && (s.lat != k.lat) && (s.lon != k.lon)) { %>
   <%    console.log(s); %>
@@ -95,16 +95,16 @@
             alt: 'x'
         }
     )
-    .addTo(map)
-    .bindPopup(
-      '<%= popuptext %>',
-      {
-        closeButton: false,
-        autoPan: true,
-        className: 'stopPopup'
-      }
-    )
-    .openPopup(); 
+    .addTo(map);
+//   .bindPopup(
+//      '<%= popuptext %>',
+//      {
+//        closeButton: false,
+//        autoPan: true,
+//        className: 'stopPopup'
+//      }
+//    )
+//    .openPopup(); 
   <%  } %>
   <%  } %>
     

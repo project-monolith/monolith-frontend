@@ -27,7 +27,7 @@ Monolith.Views = Monolith.Views || {};
         render: function () {
           this.$el.html(this.template(this.model.toJSON()));
           var $popups = $('.leaflet-popup-pane .leaflet-popup');
-          dispersePopups($popups);
+          // dispersePopups($popups);
           return this;
         }
 
