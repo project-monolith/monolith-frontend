@@ -5,7 +5,7 @@
   <div class="bus-route--tileitem-wait m-small m-align-right">
     <ul class="bus-route--waittimes">
       <% for(var i=0; i< wait_times.length; i++) {%>
-        <% if (wait_times[i].wait == "NOW") {%>
+        <% if (wait_times[i].wait == "DUE") {%>
           <li class="bus-route--waittimes-item b-red"><h2><%= wait_times[i].wait %></h2></li>
         <% }else if ( wait_times[i].wait > 0) {%>
           <li class="bus-route--waittimes-item"><h2><%= wait_times[i].wait %></h2></li>
