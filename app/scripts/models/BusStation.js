@@ -9,7 +9,8 @@ Monolith.Models = Monolith.Models || {};
       defaults: {
         id: 1,
         // the collection of routes at this station
-        bus_routes: null
+        bus_routes: null,
+        name: ""
       },
 
       url: 'http://localhost:4567/stops/1_578/trips',
@@ -37,8 +38,8 @@ Monolith.Models = Monolith.Models || {};
       },
 
       parse: function(response, options)  {
-        this.set("stopDesc", response.stopDesc);
-        this.set("stopId", response.stopId);
+        this.set("name", response.stopDesc);
+        this.set("id", response.stopId);
         this.get("bus_routes").set(response.stopRoutes);
         this.get("bus_routes").comparator = "order";
         return response;
