@@ -15,7 +15,7 @@ Monolith.Models = Monolith.Models || {};
       url: 'http://localhost:4567/stops/1_578/trips',
 
       initialize: function() {
-        this.set("stopRoutes",  new Monolith.Collections.BusRoutes());
+        this.set("bus_routes",  new Monolith.Collections.BusRoutes());
 
         this.sortAlphNum();
         // Set up poll of data
@@ -25,12 +25,12 @@ Monolith.Models = Monolith.Models || {};
       },
 
       sortAlphNum: function(){
-        this.get("stopRoutes").comparator = function sort (a, b) {
+        this.get("bus_routes").comparator = function sort (a, b) {
           var modifiedA = a.get("number").replace(/ [a-zA-Z]/g, "");
           var modifiedB = b.get("number").replace(/ [a-zA-Z]/g, "");
           return alphanum(modifiedA, modifiedB);
         };
-        this.get("stopRoutes").sort();
+        this.get("bus_routes").sort();
       },
 
       validate: function(attrs, options) {
@@ -39,8 +39,8 @@ Monolith.Models = Monolith.Models || {};
       parse: function(response, options)  {
         this.set("stopDesc", response.stopDesc);
         this.set("stopId", response.stopId);
-        this.get("stopRoutes").set(response.stopRoutes);
-        this.get("stopRoutes").comparator = "order";
+        this.get("bus_routes").set(response.stopRoutes);
+        this.get("bus_routes").comparator = "order";
         return response;
       }
     });

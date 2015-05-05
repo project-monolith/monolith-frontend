@@ -5,12 +5,12 @@
   <div class="bus-route--tileitem-wait m-small m-align-right">
     <ul class="bus-route--waittimes">
       <!--TODO: Remove logic from template-->
-      <% for(var i=0; i< routeTrips.length; i++) {%>
+      <% for(var i=0; i < Math.min(3, routeTrips.length); i++) {%>
         <% if (routeTrips[i].tripWaitTime == "DUE") {%>
           <li class="bus-route--waittimes-item b-red"><h2><%= routeTrips[i].tripWaitTime %></h2></li>
-        <% } else if ( i != 0 && routeTrips[i].wait > 0 && routeTrips[i].tripWaitSource === "Realtime") {%>
+        <% } else if ( i != 0 && routeTrips[i].tripWaitTime > 0 && routeTrips[i].tripWaitSource === "Realtime") {%>
           <li class="bus-route--waittimes-item b-blue"><h2><%= routeTrips[i].tripWaitTime %></h2></li>
-        <% } else if ( i != 0 && routeTrips[i].wait > 0 && routeTrips[i].tripWaitSource === "Scheduled") {%>
+        <% } else if ( i != 0 && routeTrips[i].tripWaitTime > 0 && routeTrips[i].tripWaitSource === "Scheduled") {%>
           <li class="bus-route--waittimes-item b-grey"><h2><%= routeTrips[i].tripWaitTime %></h2></li>
         <% }else if (i == 0){%>
           <li class="bus-route--waittimes-item"><h2><%= routeTrips[i].tripWaitTime %></h2></li>
