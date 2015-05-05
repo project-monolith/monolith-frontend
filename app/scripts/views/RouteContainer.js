@@ -21,8 +21,8 @@ Monolith.Views = Monolith.Views || {};
         initialize: function (model) {
           this.model = model;
           this.model.fetch();
-          this.listenTo(this.model.get("bus_routes"),'add remove', this.render);
-          this.listenTo(this.model.get("bus_routes"),'change', this.update);
+          this.listenTo(this.model.get("stopRoutes"),'add remove', this.render);
+          this.listenTo(this.model.get("stopRoutes"),'change', this.update);
         },
 
         update: function () {
@@ -43,7 +43,7 @@ Monolith.Views = Monolith.Views || {};
 
         renderTiles: function () {
           this.$el.html(this.template(this.model.toJSON()));
-          this.model.get("bus_routes").each(
+          this.model.get("stopRoutes").each(
               (function (busRoute) {
                 this.$('.bus-route--container').append(
                   new Monolith.Views.RouteTile(busRoute).render().$el
