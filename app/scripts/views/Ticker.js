@@ -22,7 +22,7 @@ Monolith.Views = Monolith.Views || {};
 
     render: function () {
       var model;
-      model = this.model.toJSON()
+      model = this.model.toJSON();
       if(model.text.length > 0) {
         $(this.$el).empty();
         this.$el.html(this.template(model));

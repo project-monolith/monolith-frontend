@@ -19,7 +19,7 @@ Monolith.Models = Monolith.Models || {};
     },
 
     parse: function(response, options)  {
-      return response;
+      this.set("text", response);
     }
   });
 })();
