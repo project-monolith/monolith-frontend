@@ -12,29 +12,24 @@ Monolith.Models = Monolith.Models || {};
       bus_routes: null
     },
 
-    url: 'http://localhost:4567/stops/1_578/proximity',
+    url: 'http://localhost:4567/stops/1_578/vicinity',
 
     initialize: function() {
       this.set(
         "nearby_stops", 
         new Monolith.Collections.NearbyStops()
       );
-// TODO: replace this with reading from the backend, when that side is implemented      
       this.set(
-        "location_data",
-        {
-          "lat": 47.61029,
-          "lon": -122.338173,
-          "id": "1_578",
-          "name": "3rd Ave & Pike St"
-        }
+        "home_stop",
+        new Monolith.Models.NearbyStop()
       );
     },
     
     validate: function(attrs, options) {},
     
     parse: function(response, options)  {
-      this.get("nearby_stops").set(response);
+      this.get("nearby_stops").set(response.vicinityNearbyStops);
+      this.get("home_stop").set(response.vicinityHomeStop);
       return response;
     }
   });
