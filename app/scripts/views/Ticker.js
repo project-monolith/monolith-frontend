@@ -17,7 +17,7 @@ Monolith.Views = Monolith.Views || {};
 
     start: function() {
       // Configure the ticker
-	    this.$("ul#ticker").liScroll({travelocity: 0.1});
+      this.$("ul#ticker").liScroll({travelocity: 0.1});
     },
 
     render: function () {

@@ -16,7 +16,7 @@ Monolith.Models = Monolith.Models || {};
 
     initialize: function() {
       this.set(
-        "nearby_stops", 
+        "nearby_stops",
         new Monolith.Collections.NearbyStops()
       );
       this.set(
@@ -24,9 +24,9 @@ Monolith.Models = Monolith.Models || {};
         new Monolith.Models.NearbyStop()
       );
     },
-    
+
     validate: function(attrs, options) {},
-    
+
     parse: function(response, options)  {
       this.get("nearby_stops").set(response.nearbyStops);
       this.get("home_stop").set(response.homeStop);

@@ -5,7 +5,7 @@
   <% var location_data = home_stop.attributes.location; %>
   <% console.log(location_data); %>
   <% if (!(location_data.lon === 0 && location_data.lat ===0)) { %>
-  
+
     var kioskIcon = L.icon({
       iconUrl: '../../images/marker_black_on_yellow.png',
       iconSize: [24, 33],
@@ -44,22 +44,22 @@
         delete map._popup;
       });
 
-  // alternate tile styles: 
+  // alternate tile styles:
   // //{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png  // subdomain 'a' only
   // //{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png  // subdomain 'a' only
   // //stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg  // subdomains 'a', 'b', 'c'
   // //{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png  // subdomains 'a' & 'b'
 
-    L.tileLayer( 
-        '////{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', 
+    L.tileLayer(
+        '////{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png',
         {
             attribution: 'Data &copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors, under ODbL | Map tiles by CartoDB, under CC BY 3.0.',
           subdomains: ['a', 'b']
         }
-    ).addTo( map ); 
+    ).addTo( map );
 
 
-    <% var k = location_data; %>           
+    <% var k = location_data; %>
     L.marker(
         [<%= k.lat %>, <%= k.lon %>],
         {
@@ -108,14 +108,14 @@
   //        className: 'stopPopup'
   //      }
   //    )
-  //    .openPopup(); 
+  //    .openPopup();
     <%  } %>
     <%  } %>
   <% } %>
-    
 
-           
-           
+
+
+
 </script>
 
 
