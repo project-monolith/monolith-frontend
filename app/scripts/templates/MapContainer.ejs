@@ -1,9 +1,9 @@
 <div class="map" id="map"></div>
 
 <script type="text/javascript">
-  <% console.log(this.model.toJSON()); %>
+  <% // console.log(this.model.toJSON()); %>
   <% var location_data = home_stop.attributes.location; %>
-  <% console.log(location_data); %>
+  <% // console.log(location_data); %>
   <% if (!(location_data.lon === 0 && location_data.lat ===0)) { %>
 
     var kioskIcon = L.icon({
@@ -79,7 +79,7 @@
     )
     .openPopup();
 
-<% console.log(nearby_stops); %>
+<% // console.log(nearby_stops); %>
     <%  for (var i=0; i < nearby_stops.length; i++) { %>
     <%    var s = nearby_stops.models[i].attributes; %>
     <%    if ((s.name.indexOf("drop off only") < 0) && (s.location.lat != k.lon) && (s.location.lat != k.lon)) { %>
