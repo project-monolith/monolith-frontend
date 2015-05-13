@@ -28,8 +28,8 @@ Monolith.Models = Monolith.Models || {};
     validate: function(attrs, options) {},
     
     parse: function(response, options)  {
-      this.get("nearby_stops").set(response.vicinityNearbyStops);
-      this.get("home_stop").set(response.vicinityHomeStop);
+      this.get("nearby_stops").set(response.nearbyStops);
+      this.get("home_stop").set(response.homeStop);
       return response;
     }
   });

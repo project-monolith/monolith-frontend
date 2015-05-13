@@ -18,7 +18,7 @@ Monolith.Models = Monolith.Models || {};
     },
 
     parse: function(response, options)  {
-      this.set("routeTrips", new Monolith.Collections.BusWaitTimes(this.get("routeTrips"))); //_.each(this.get("wait_times"), function(waitTimes) {
+      this.set("routeTrips", new Monolith.Collections.BusWaitTimes(this.get("trips"))); //_.each(this.get("wait_times"), function(waitTimes) {
       //  this.set("wait_times", new Monolith.Views.BusWaitTimes(waitTimes));
       //}, this);
         return response;

@@ -38,9 +38,9 @@ Monolith.Models = Monolith.Models || {};
       },
 
       parse: function(response, options)  {
-        this.set("name", response.stopDesc);
-        this.set("id", response.stopId);
-        this.get("bus_routes").set(response.stopRoutes);
+        this.set("name", response.desc);
+        this.set("id", response.id);
+        this.get("bus_routes").set(response.routes);
         this.get("bus_routes").comparator = "order";
         return response;
       }

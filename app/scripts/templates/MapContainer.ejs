@@ -2,9 +2,9 @@
 
 <script type="text/javascript">
   <% console.log(this.model.toJSON()); %>
-  <% var location_data = home_stop.attributes.stopLocation; %>
+  <% var location_data = home_stop.attributes.location; %>
   <% console.log(location_data); %>
-  <% if (!(location_data.pointLon === 0 && location_data.pointLat ===0)) { %>
+  <% if (!(location_data.lon === 0 && location_data.lat ===0)) { %>
   
     var kioskIcon = L.icon({
       iconUrl: '../../images/marker_black_on_yellow.png',
@@ -24,8 +24,8 @@
         'map',
         {
             center: new L.LatLng(
-              <%= location_data.pointLat %>,
-              <%= location_data.pointLon %>
+              <%= location_data.lat %>,
+              <%= location_data.lon %>
             ),
             zoom: 18,
             dragging: false,
@@ -61,7 +61,7 @@
 
     <% var k = location_data; %>           
     L.marker(
-        [<%= k.pointLat %>, <%= k.pointLon %>],
+        [<%= k.lat %>, <%= k.lon %>],
         {
             icon: kioskIcon,
             alt: '*'
@@ -82,18 +82,18 @@
 <% console.log(nearby_stops); %>
     <%  for (var i=0; i < nearby_stops.length; i++) { %>
     <%    var s = nearby_stops.models[i].attributes; %>
-    <%    if ((s.stopName.indexOf("drop off only") < 0) && (s.stopLocation.pointLat != k.pointLat) && (s.stopLocation.pointLon != k.pointLon)) { %>
+    <%    if ((s.name.indexOf("drop off only") < 0) && (s.location.lat != k.lon) && (s.location.lat != k.lon)) { %>
     <%    // console.log(s); %>
     <%    var popuptext = '<span class="popup heading">'; %>
-    <%    popuptext += s.stopName; %>
+    <%    popuptext += s.name; %>
     <%    popuptext += '</span><br /><span class="popup bodytext">Routes: '; %>
-    <%    for (var j=0; j < s.stopRoutes.length; j++) { %>
+    <%    for (var j=0; j < s.routes.length; j++) { %>
     <%      if (j > 0) { popuptext += ', '; } %>
-    <%      popuptext += s.stopRoutes[j] %>
+    <%      popuptext += s.routes[j] %>
     <%    } %>
     <%    popuptext += '</span>'; %>
       L.marker(
-          [<%= s.stopLocation.pointLat %>, <%= s.stopLocation.pointLon %>],
+          [<%= s.location.lat %>, <%= s.location.lon %>],
           {
               icon: stopIcon,
               alt: 'x'
