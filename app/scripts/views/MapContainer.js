@@ -38,8 +38,8 @@ Monolith.Views = Monolith.Views || {};
 
 
 function intersectRect(r1, r2) {
-  return !(r2.left > r1.right || 
-           r2.right < r1.left || 
+  return !(r2.left > r1.right ||
+           r2.right < r1.left ||
            r2.top > r1.bottom ||
            r2.bottom < r1.top);
 }
@@ -51,11 +51,11 @@ function calcOffsets(r1, r2) {
   var right = Math.max(0, r2.right - r1.left);
   var down = Math.max(0, r2.bottom - r1.top);
   var left = Math.max(0, r1.right - r2.left);
-  
+
   return {
     up: up,
-    right: right, 
-    down: down,  
+    right: right,
+    down: down,
     left: left
   };
 }
@@ -83,7 +83,7 @@ function movePopups(p1, p2, diffs) {
     p1.style.left = parseInt(p1.style.left) + diffs.right / 2 + "px";
     p2.style.left = parseInt(p2.style.left) - diffs.right / 2 + "px";
   }
-  
+
   return p1.children[0].getBoundingClientRect();
 }
 

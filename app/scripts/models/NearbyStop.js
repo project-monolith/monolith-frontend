@@ -8,9 +8,13 @@ Monolith.Models = Monolith.Models || {};
   Monolith.Models.NearbyStop = Backbone.Model.extend({
     defaults: {
       name: "stop",
-      lat: 0,
-      lon: 0,
-      routes: []
+      id: "",
+      routes: [],
+      direction: "",
+      location: {
+        lon: 0,
+        lat: 0
+      }
     },
 
     initialize: function() {

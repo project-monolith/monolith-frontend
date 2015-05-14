@@ -25,6 +25,12 @@ h1,h2,h3,h4,h5 {
 }
 
 // TODO: Refactor into separate files
+.bus-station--container {
+width: 1199px;
+max-height: 1900px;
+overflow: hidden;
+}
+
 .bus-station--title {
   background-color: #fbba2f;
   height: 72px;
@@ -74,7 +80,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .bus-route--container {
-  height: 736px;
+  height: 738px;
   overflow: auto;
 }
 
@@ -155,7 +161,7 @@ h1,h2,h3,h4,h5 {
 .bus-route--ticker { /* the outer div with the black border */
 clear: both;
 background: #fff;
-width: 2400px;
+min-width: 36000px;
 height: 50px;
 margin: 0;
 padding: 0;
@@ -199,13 +205,13 @@ ul.newsticker span {
 margin: 0 10px 0 0;
 }
 
-div.map--container {
+div.map {
   clear: both;
   border: 1px solid black;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 640px;
+  height: 933px;
   overflow: hidden;
 }
 

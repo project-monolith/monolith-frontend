@@ -22,7 +22,7 @@ We recommend:
 4. `npm install grunt -g`
 5. `npm install grunt-cli -g`
 6. `npm install bower -g`
-7. Start the [backend service](https://github.com/project-monolith/bus-kiosk-redesign#building-and-running-the-backend)
+7. Start the [backend service](https://github.com/project-monolith/monolith-backend)
 
 #### Building and Running Development App
 1. `npm install`
@@ -41,4 +41,4 @@ All examples are for stop # 578
 
 * [Get coming trips](http://localhost:4567/stops/1_578/trips)
 * [Get content for the ticker](http://localhost:4567/stops/1_578/ticker)
-* [Get stop's coordinates + list of nearby stops](http://localhost:4567/stops/1_578/proximity)
+* [Get stop's coordinates + list of nearby stops](http://localhost:4567/stops/1_578/vicinity)
