@@ -41,7 +41,7 @@ overflow: hidden;
 
 /*Matt Edit*/
 .bus-station--title {
-  height: 150px;
+  height: 114px;
 }
 /*End Matt Edit*/
 
@@ -83,13 +83,18 @@ overflow: hidden;
 /*Matt Edit*/
 .bus-route--label {
   background-color: #0B79BF;
-  display: none;
+  border-top: 6px solid #000000;
+  height: auto;
+  padding: 0;
+  //display: none;
 }
-/*End Matt Edit*/
 
 .bus-route--label h4{
   font-size: 24pt;
+  line-height: 1;
+  padding: .25em 0;
 }
+/*End Matt Edit*/
 
 .m-split {
   display: inline-block;
@@ -109,10 +114,15 @@ overflow: hidden;
 }
 
 /*Matt Edit*/
+.bus-route--tileitem-container {
+  box-sizing: border-box;
+}
+
 .bus-route--container > div:first-child .bus-route--tileitem,
 .bus-route--container > div:nth-child(2) .bus-route--tileitem {
-  //border-top: none;
+  border-top-width: 0;
 }
+/*End Matt Edit*/
 
 .bus-route--tileitem {
   width: 600px;
@@ -124,6 +134,15 @@ overflow: hidden;
 }
 
 /*Matt Edit*/
+.bus-route--tileitem {
+  /*height: 100%;
+  width: 600px;*/
+}
+
+.bus-route--container > div .bus-route--tileitem {
+  border-top: 6px solid #000000;
+}
+
 .bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li:first-child {
   color: #0B79BF !important;
 }
