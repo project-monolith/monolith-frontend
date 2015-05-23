@@ -39,6 +39,12 @@ overflow: hidden;
   padding: .4em 2em;
 }
 
+/*Matt Edit*/
+.bus-station--title {
+  height: 150px;
+}
+/*End Matt Edit*/
+
 .bus-station--title h3{
   font-size: 45pt;
 }
@@ -59,6 +65,11 @@ overflow: hidden;
   font-size: 14pt;
 }
 
+/*Matt Edit*/
+.bus-route--legend {
+  display: none;
+}
+
 .bus-route--label {
   background-color:#737273;
   height: 65px;
@@ -68,6 +79,13 @@ overflow: hidden;
   width: 100%;
   color: white;
 }
+
+/*Matt Edit*/
+.bus-route--label {
+  background-color: #0B79BF;
+  display: none;
+}
+/*End Matt Edit*/
 
 .bus-route--label h4{
   font-size: 24pt;
@@ -90,6 +108,12 @@ overflow: hidden;
   float: left;
 }
 
+/*Matt Edit*/
+.bus-route--container > div:first-child .bus-route--tileitem,
+.bus-route--container > div:nth-child(2) .bus-route--tileitem {
+  //border-top: none;
+}
+
 .bus-route--tileitem {
   width: 600px;
   height: 246px;
@@ -98,6 +122,34 @@ overflow: hidden;
   text-transform: capitalize;
   padding: 1.4em 0 0 2em;
 }
+
+/*Matt Edit*/
+.bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li:first-child {
+  color: #0B79BF !important;
+}
+
+.bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li:first-child h2 {
+  display: inline-block;
+}
+
+.bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li:first-child:after {
+  content: 'min';
+  font-size: 56px;
+  padding-left: .25em;
+}
+
+.bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li:nth-child(n + 2) {
+  color: #a7a7a7 !important;
+}
+
+.bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li.b-red {
+  color: #EC1D40 !important;
+}
+
+.bus-route--tileitem .bus-route--tileitem-wait .bus-route--waittimes li:first-child.b-red:after {
+  display: none;
+}
+/*End Matt Edit*/
 
 .b-red {
   color: #EC1D40;
