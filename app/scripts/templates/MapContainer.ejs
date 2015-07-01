@@ -45,16 +45,18 @@
       });
 
   // alternate tile styles:
+  // previews at https://leaflet-extras.github.io/leaflet-providers/preview/
+  // other options at https://wiki.openstreetmap.org/wiki/Tile_servers
   // //{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png  // subdomain 'a' only
   // //{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png  // subdomain 'a' only
   // //stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg  // subdomains 'a', 'b', 'c'
-  // //{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png  // subdomains 'a' & 'b'
+//currently broken (as of Jul 1 2015)  // //{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png  // subdomains 'a' & 'b'
 
     L.tileLayer(
-        '////{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png',
+        '//{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
         {
             attribution: 'Data &copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors, under ODbL | Map tiles by CartoDB, under CC BY 3.0.',
-          subdomains: ['a', 'b']
+          subdomains: ['a']
         }
     ).addTo( map );
 
