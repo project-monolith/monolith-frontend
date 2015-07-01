@@ -4,7 +4,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 // switching to CDN version of the Leaflet files to fix deployment issue
 //@import '../bower_components/leaflet/dist/leaflet.css';
-@import '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
+@import '//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
 
 @font-face {
   font-family: "Frutiger";
@@ -210,7 +210,7 @@ div.map {
   border: 1px solid black;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 1079px;
   height: 933px;
   overflow: hidden;
 }
