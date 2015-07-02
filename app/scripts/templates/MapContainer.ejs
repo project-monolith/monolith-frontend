@@ -10,14 +10,14 @@
       iconUrl: '../../images/marker_black_on_yellow.png',
       iconSize: [24, 33],
       iconAnchor: [12, 33],
-      popupAnchor: [0, -33]
+      popupAnchor: [0, -31]
     });
 
     var stopIcon = L.icon({
       iconUrl: '../../images/marker_white_on_black.png',
       iconSize: [25, 25],
       iconAnchor: [12, 25],
-      popupAnchor: [0, -25]
+      popupAnchor: [1, -10]
     });
 
     var map = L.map(
@@ -27,7 +27,7 @@
               <%= location_data.lat %>,
               <%= location_data.lon %>
             ),
-            zoom: 18,
+            zoom: 17,
             dragging: false,
             touchZoom: false,
             scrollWheelZoom: false,
@@ -71,12 +71,13 @@
     )
     .addTo(map)
     .bindPopup(
-      "You are here: <br/ > <%= k.name %>",
+      "You are here<br/ > <%= k.name %>",
        {
-        closeButton: false,
-        autoPan: true,
-        className: 'kioskPopup'
-      }
+         closeButton: false,
+         autoPan: true,
+         className: 'kioskPopup',
+         minWidth: 0
+       }
 
     )
     .openPopup();
@@ -87,12 +88,7 @@
     <%    if ((s.name.indexOf("drop off only") < 0) && (s.location.lat != k.lon) && (s.location.lat != k.lon)) { %>
     <%    // console.log(s); %>
     <%    var popuptext = '<span class="popup heading">'; %>
-    <%    popuptext += s.name; %>
-    <%    popuptext += '</span><br /><span class="popup bodytext">Routes: '; %>
-    <%    for (var j=0; j < s.routes.length; j++) { %>
-    <%      if (j > 0) { popuptext += ', '; } %>
-    <%      popuptext += s.routes[j] %>
-    <%    } %>
+    <%    popuptext += String.fromCharCode(65+i); %>
     <%    popuptext += '</span>'; %>
       L.marker(
           [<%= s.location.lat %>, <%= s.location.lon %>],
@@ -101,16 +97,17 @@
               alt: 'x'
           }
       )
-      .addTo(map);
-  //   .bindPopup(
-  //      '<%= popuptext %>',
-  //      {
-  //        closeButton: false,
-  //        autoPan: true,
-  //        className: 'stopPopup'
-  //      }
-  //    )
-  //    .openPopup();
+      .addTo(map)
+      .bindPopup(
+        '<%= popuptext %>',
+        {
+          closeButton: false,
+          autoPan: true,
+          className: 'stopPopup',
+          minWidth: 1
+        }
+      )
+      .openPopup();
     <%  } %>
     <%  } %>
   <% } %>
