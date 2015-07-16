@@ -9,7 +9,7 @@
     "modernizr": "~2.7.1",
     "isotope": "~2.1.1",
     "underscore": "~1.8.2",
-    "leaflet": "~0.7.3"
+    "leaflet": "~1.0.0"
   },
   "devDependencies": {}
 }
